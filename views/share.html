@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href="minified/ladda.min.css" rel="stylesheet">
+    <link href="css/share.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>InstantTransfer</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <button class="btn btn-sm upload-btn" type="button">Add Files</button>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="friends-email" id="friends-email" placeholder="Friend's Email" required>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="user-email" id="user-email" placeholder="Your's Email" required>
+                </div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <textarea class="form-control text-message" id="message" placeholder="Message..." rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <button id="uploadFile" type="button" data-loading-text="Transferring..." class="btn btn-lg send-btn">Transfer Now</button>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input id="upload-input" type="file" name="upload-input" multiple="multiple"></br>
+<script>
+    if (!window.jQuery) {
+      document.write('<script src="vendor/jquery/dist/jquery.min.js"><\/script>');
+    }
+  </script>
+<script src="minified/spin.min.js"></script>
+<script src="minified/ladda.min.js"></script>
+<script src="javascripts/ladda.jquery.js"></script>
+<script src="javascripts/transfer.js"></script>
+</body>
+</html>
