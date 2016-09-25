@@ -3,7 +3,7 @@
 import express from "express";
 import {Player} from "./player";
 import {Ghost} from "./ghost";
-import NodeMailer from "ch-nodemailer"
+import NodeMailer from "../../ch-nodemailer"
 
 let router = express.Router(),
   {NODE_ENV} = process.env,

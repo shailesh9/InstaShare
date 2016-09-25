@@ -1,6 +1,5 @@
 "use strict";
 import formidable from "formidable";
-import util from "util";
 import path from "path";
 import fs from "fs";
 

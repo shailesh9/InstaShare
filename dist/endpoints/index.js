@@ -13,7 +13,7 @@ var _player = require("./player");
 
 var _ghost = require("./ghost");
 
-var _chNodemailer = require("ch-nodemailer");
+var _chNodemailer = require("../../ch-nodemailer");
 
 var _chNodemailer2 = _interopRequireDefault(_chNodemailer);
 

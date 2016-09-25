@@ -11,10 +11,6 @@ var _formidable = require("formidable");
 
 var _formidable2 = _interopRequireDefault(_formidable);
 
-var _util = require("util");
-
-var _util2 = _interopRequireDefault(_util);
-
 var _path = require("path");
 
 var _path2 = _interopRequireDefault(_path);
