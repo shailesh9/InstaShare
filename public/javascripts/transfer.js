@@ -37,7 +37,7 @@ jQuery(document).ready(function ($){
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8050/player',
+      url: 'https://localhost:8050/player',
       data: formData,
       dataType: 'json',
       processData: false,
