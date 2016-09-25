@@ -1,0 +1,1 @@
+{"version":3,"sources":["../lib/index.es6"],"names":[],"mappings":"AAAA;;;;;;AAEA","file":"index.js","sourcesContent":["\"use strict\";\n\nimport {Nodemailer} from \"./nodemailer\";\n\nexport default Nodemailer;\n"]}
