@@ -21,13 +21,13 @@ var nodeEnv = NODE_ENV || "local";
 var config = Object.freeze(require("../config/" + nodeEnv));
 var app = (0, _express2.default)();
 
-app.set("port", config.http.port);
+app.set("port", process.env.PORT || config.http.port);
 app.use(_express2.default.static(_path2.default.resolve('public')));
 app.use(_bodyParser2.default.json());
 app.use(_index.router);
 
 // Starts the app
-app.listen(app.get("port"), function () {
-  console.log("Server has started and is listening on port: " + app.get("port"));
+app.listen(app.get('port'), function () {
+  console.log("Server has started and is listening on port: " + app.get('port'));
 });
 //# sourceMappingURL=api.js.map
