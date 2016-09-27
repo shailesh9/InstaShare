@@ -16,22 +16,26 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <button class="btn btn-sm upload-btn" type="button">Add Files</button>
+                <div class="panel-body" id="scrollDiv" style='max-height: 130px; overflow-y: auto'>
+                    <h2>Send upto 2GB</h2>
+                    <ul id="added-files">
+                        <li class="add">
+                            <button class="btn btn-sm upload-btn" type="button"><span class="glyphicon glyphicon-plus"></span>Add Files</button>
+                        </li>
+                    </ul>
                 </div>
-                <div class="panel-body">
+                <div id="receiver">
                     <input type="text" class="form-control" name="friends-email" id="friends-email" placeholder="Friend's Email" required>
                 </div>
-                <div class="panel-body">
+                <div id="sender">
                     <input type="text" class="form-control" name="user-email" id="user-email" placeholder="Your's Email" required>
                 </div>
-                <div class="panel-body">
+                <div id="text-message">
                     <div class="input-group">
                         <textarea class="form-control text-message" id="message" placeholder="Message..." rows="2"></textarea>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div id="transfer">
                     <button id="uploadFile" type="button" data-loading-text="Transferring..." class="btn btn-lg send-btn">Transfer Now</button>
                     <span></span>
                 </div>

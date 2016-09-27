@@ -23,8 +23,9 @@ body {
 
 .send-btn {
     color: #FFFFFF;
-    background-color: #02DDFA;
+    background-color: #18DCFA;
     border: none;
+    width: 100%;
 }
 
 .upload-btn {
@@ -32,6 +33,7 @@ body {
     background-color: #F89406;
     border: none;
     float: left;
+    margin-top: 0px;
 }
 
 .upload-btn:hover,
@@ -48,7 +50,7 @@ body {
 .send-btn:active,
 .send-btn.active {
     color: #ffffff;
-    background-color: #1DC5DB;
+    background-color: #29f3fa;
     border: none;
 }
 
@@ -66,24 +68,43 @@ h4 {
     width: 100%;
     resize: none;
 }
-
+.form-control {
+    border-radius: 0 !important;
+    -webkit-appearance: none;
+}
+#added-files {
+    padding: 0px;
+    margin-top: 0px;
+}
+.name {
+    margin-right: 200px;
+    float: left;
+}
+.add {
+    display: inherit;
+}
+.temp-upload-file {
+    display: inherit;
+}
 .glyphicon {
-    top: 8px;
+    top: 3px;
     font-size: 1em;
     color: #9CA3A9;
     float: left;
+    right: 4px;
 }
 
 h2 {
-    margin-top: 15px;
+    float: left;
+    margin-top: -18px;
     color: #68757E;
 }
 
 .panel {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     box-shadow: 0 0 100px black;
-    margin-right: 100px
+    margin-right: 126px
 }
 
 .container {

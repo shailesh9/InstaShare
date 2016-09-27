@@ -3,19 +3,27 @@
  */
 jQuery(document).ready(function ($){
   $('.upload-btn').on('click', function (){
+    /*var html = "<div class='panel-body' style='height: 58px; overflow-y: auto'><ul class='added-files'></ul></div>";
+    $(this).parent().parent().prepend(html);*/
     $('#upload-input').click();
   });
 
-  var files;
+  var files,
+    nameList = [];
   $('#upload-input').on('change', function () {
     files =  $(this).get(0).files;
-    /*var parentDiv = $(".upload-btn").closest("div");
-    for (var i in files) {
-      if (files.hasOwnProperty(i)) {
 
+    $('h2').empty();
+    for (var i in files) {
+      if (files.hasOwnProperty(i) && nameList.indexOf(files[i].name) == -1) {
+        var list = "<li class='temp-upload-file'><p class='name'><span style='display: inline-block'>"+files[i].name+"</span></p></li>";
+        $("#added-files").prepend(list);
+        nameList.push(files[i].name);
+        $("#scrollDiv").scrollTop($('#scrollDiv')[0].scrollHeight);
       }
-    }*/
+    }
   });
+
   $('#uploadFile').on('click', function (event){
     $(this).button("loading");
     if (files.length) {
@@ -37,7 +45,7 @@ jQuery(document).ready(function ($){
 
     $.ajax({
       type: 'POST',
-      url: 'https://localhost:8050/player',
+      url: 'http://localhost:8050/player',
       data: formData,
       dataType: 'json',
       processData: false,
