@@ -13,37 +13,39 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-body" id="scrollDiv" style='max-height: 130px; overflow-y: auto'>
-                    <h2>Send upto 2GB</h2>
-                    <ul id="added-files">
-                        <li class="add">
-                            <button class="btn btn-sm upload-btn" type="button"><span class="glyphicon glyphicon-plus"></span>Add Files</button>
-                        </li>
-                    </ul>
-                </div>
-                <div id="receiver">
-                    <input type="text" class="form-control" name="friends-email" id="friends-email" placeholder="Friend's Email" required>
-                </div>
-                <div id="sender">
-                    <input type="text" class="form-control" name="user-email" id="user-email" placeholder="Your's Email" required>
-                </div>
-                <div id="text-message">
-                    <div class="input-group">
-                        <textarea class="form-control text-message" id="message" placeholder="Message..." rows="2"></textarea>
+    <form id="fileTransfer" role="form">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="scrollDiv" style='max-height: 130px; overflow-y: auto'>
+                        <h2>Send upto 2GB</h2>
+                        <ul id="added-files">
+                            <li class="add">
+                                <input id="upload-input" type="file" name="upload-input" multiple="multiple" required></br>
+                                <button class="btn btn-sm upload-btn" type="button"><span class="glyphicon glyphicon-plus"></span>Add Files</button>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div id="transfer">
-                    <button id="uploadFile" type="button" data-loading-text="Transferring..." class="btn btn-lg send-btn">Transfer Now</button>
-                    <span></span>
+                    <div id="receiver">
+                        <input type="email" class="form-control" name="friends-email" id="friends-email" placeholder="Friend's Email" required>
+                    </div>
+                    <div id="sender">
+                        <input type="email" class="form-control" name="user-email" id="user-email" placeholder="Your's Email" required>
+                    </div>
+                    <div id="text-message">
+                        <div class="input-group">
+                            <textarea class="form-control text-message" id="message" placeholder="Message..." rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div id="transfer">
+                        <button id="uploadFile" type="submit" data-loading-text="Transferring..." class="btn btn-lg send-btn">Transfer Now</button>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
-<input id="upload-input" type="file" name="upload-input" multiple="multiple"></br>
 <script>
     if (!window.jQuery) {
       document.write('<script src="vendor/jquery/dist/jquery.min.js"><\/script>');

@@ -8,7 +8,7 @@ jQuery(document).ready(function ($){
     $('#upload-input').click();
   });
 
-  var files,
+  var files = [],
     nameList = [];
   $('#upload-input').on('change', function () {
     files =  $(this).get(0).files;
@@ -25,8 +25,8 @@ jQuery(document).ready(function ($){
   });
 
   $('#uploadFile').on('click', function (event){
-    $(this).button("loading");
-    if (files.length) {
+    if (files.length && $("#friends-email").val() && $("#user-email").val()) {
+      $(this).button("loading");
       var formData = new FormData();
 
       for (var i = 0; i < files.length; i++) {
