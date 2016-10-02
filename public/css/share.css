@@ -36,6 +36,15 @@ body {
     margin-top: 0px;
 }
 
+.fileupload-exists {
+    display: none;
+}
+.remove-file {
+    margin: 0px 0 0 0px;
+    float: right;
+    text-align: center;
+}
+
 .upload-btn:hover,
 .upload-btn:focus,
 .upload-btn:active,
@@ -76,15 +85,21 @@ h4 {
     padding: 0px;
     margin-top: 0px;
 }
-.name {
-    margin-right: 200px;
+
+#file-name {
+    display:inline-block;
     float: left;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .add {
     display: inherit;
 }
 .temp-upload-file {
     display: inherit;
+    width: 232px;
+    height: 11px;
 }
 .glyphicon {
     top: 3px;

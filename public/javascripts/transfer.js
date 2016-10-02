@@ -12,17 +12,22 @@ jQuery(document).ready(function ($){
     nameList = [];
   $('#upload-input').on('change', function () {
     files =  $(this).get(0).files;
-
+    $(".fileupload-exists").css("display", "inline");
     $('h2').empty();
     for (var i in files) {
       if (files.hasOwnProperty(i) && nameList.indexOf(files[i].name) == -1) {
-        var list = "<li class='temp-upload-file'><p class='name'><span style='display: inline-block'>"+files[i].name+"</span></p></li>";
+        var list = "<li class='temp-upload-file'>" +
+          "<p class='name'><span id='file-name' style='display: inline-block; max-width: 223px'>"+files[i].name+"</span></p>" +
+            "<p class='remove-file'><a href='#'>x</a></p>"+
+          "</li>";
         $("#added-files").prepend(list);
         nameList.push(files[i].name);
         $("#scrollDiv").scrollTop($('#scrollDiv')[0].scrollHeight);
       }
     }
   });
+
+
 
   $('#uploadFile').on('click', function (event){
     if (files.length && $("#friends-email").val() && $("#user-email").val()) {
