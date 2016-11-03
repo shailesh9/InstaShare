@@ -8,26 +8,36 @@ jQuery(document).ready(function ($){
     $('#upload-input').click();
   });
 
-  var files = [],
+  var fileNameValueObj = {},
     nameList = [];
   $('#upload-input').on('change', function () {
-    files =  $(this).get(0).files;
+    var files =  $(this).get(0).files;
     $(".fileupload-exists").css("display", "inline");
     $('h2').empty();
     for (var i in files) {
-      if (files.hasOwnProperty(i) && nameList.indexOf(files[i].name) == -1) {
-        var list = "<li class='temp-upload-file'>" +
+      if (files.hasOwnProperty(i) && !fileNameValueObj[files[i].name]) {
+        var list = "<li class='temp-upload-file' data-filename="+files[i].name+">" +
           "<p class='name'><span id='file-name' style='display: inline-block; max-width: 223px'>"+files[i].name+"</span></p>" +
-            "<p class='remove-file'><a href='#'>x</a></p>"+
+            "<span class='remove-file'><a href='#'>x</a></span>"+
           "</li>";
         $("#added-files").prepend(list);
+        fileNameValueObj[files[i].name] = files[i];
         nameList.push(files[i].name);
         $("#scrollDiv").scrollTop($('#scrollDiv')[0].scrollHeight);
       }
     }
   });
 
-
+  $("#added-files").on("click", "a", function (e) {
+    var fileAttribute = $(".temp-upload-file").attr("data-filename");
+    
+    $('.temp-upload-file[data-filename="'+ fileAttribute +'"]').remove();
+    delete fileNameValueObj[fileAttribute];
+    
+    if (Object.keys(fileNameValueObj).length == 0) {
+      $("h2", "#scrollDiv").text("Send upto 2GB")
+    }
+  });
 
   $('#uploadFile').on('click', function (event){
     if (files.length && $("#friends-email").val() && $("#user-email").val()) {
