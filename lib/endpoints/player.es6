@@ -12,7 +12,7 @@ export class Player {
   getPlayer(req, res) {
     console.log("GOt post request");
     this.mailOption = {
-      // "from": "dav.warne9@gmail.com",
+      "subject": "",
       "attachments": []
     };
     let form = new formidable.IncomingForm();
@@ -30,7 +30,8 @@ export class Player {
         }
         break;
         case "userEmail": {
-          this.mailOption.from = value
+          this.mailOption.from = value;
+          this.mailOption.subject = value + " has sent you a file via InstaShare";
         }
         break;
         case "message": {

@@ -54,6 +54,21 @@ body {
     border: none;
 }
 
+.close-btn:hover,
+.close-btn:focus,
+.close-btn:active,
+.close-btn {
+    border-radius: 6px;
+    color: #ffffff;
+    position: relative;
+    background-color: #F89406;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
 .send-btn:hover,
 .send-btn:focus,
 .send-btn:active,

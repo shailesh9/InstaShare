@@ -9,9 +9,10 @@ jQuery(document).ready(function ($){
   });
 
   var fileNameValueObj = {},
-    nameList = [];
+    nameList = [],
+    files = [];
   $('#upload-input').on('change', function () {
-    var files =  $(this).get(0).files;
+    files =  $(this).get(0).files;
     $(".fileupload-exists").css("display", "inline");
     $('h2').empty();
     for (var i in files) {
@@ -41,6 +42,7 @@ jQuery(document).ready(function ($){
 
   $('#uploadFile').on('click', function (event){
     if (files.length && $("#friends-email").val() && $("#user-email").val()) {
+      console.log("GOT HERE")
       $(this).button("loading");
       var formData = new FormData();
 
@@ -74,8 +76,8 @@ jQuery(document).ready(function ($){
         console.log("Errorr =>>>>>>>>>", error);
       }
     }).always(function(){
-      console.log("gooot");
       $(".send-btn").button('reset');
+      $("#statusModal").modal("toggle");
     });
 
   })
