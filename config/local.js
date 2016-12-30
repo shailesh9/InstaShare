@@ -20,8 +20,8 @@ var environmentVariables = require("./environmentVariables"),
       "port": 465,
       "secure": true, // use SSL
       "auth": {
-        "user": "dav.warne9@gmail.com",
-        "pass": 'jairajputana'
+        "user": "email",
+        "pass": 'pass'
       }
     },
     "mongoDb": {
